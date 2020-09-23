@@ -53,7 +53,7 @@ func TestCtxSetDefaultVerifyLocations(t *testing.T) {
 		t.Error("cant create context")
 	}
 
-	conn, err := Dial("tcp", "google.com:443", ctx, 0)
+	conn, err := Dial("tcp", "g00gle.com:443", ctx, 0)
 	v := conn.VerifyResult()
 
 	if v != UnableToGetIssuerCertLocally {
@@ -69,7 +69,7 @@ func TestCtxSetDefaultVerifyLocations(t *testing.T) {
 		t.Errorf("set_default_verify_paths OpenSSL call failed: %v", err)
 	}
 
-	conn, err = Dial("tcp", "google.com:443", ctx, 0)
+	conn, err = Dial("tcp", "g00gle.com:443", ctx, 0)
 	v = conn.VerifyResult()
 
 	if v != Ok {
